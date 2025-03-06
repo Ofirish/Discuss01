@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>דיונוע - משחק תרבות דיון</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container" id="main-game">
+        <div id="name-stage" class="stage active-stage">
+            <h2>ברוכים הבאים לדיונוע! 🚀</h2>
+            <div class="scene-container">
+                <div class="scene-image" style="background-image: url('https://images.unsplash.com/photo-1434626881859-194d67b2b86f')"></div>
+                <div class="question-panel">
+                    <p>הכנס את שמך כדי להתחיל במסע לשיפור תרבות הדיון:</p>
+                    <input type="text" id="player-name" placeholder="שם השחקן">
+                    <button onclick="startGame()">התחלת המסע!</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-stages"></div>
+
+        <div id="end-stage" class="stage">
+            <h2>מסע הדיון הסתיים! 🏆</h2>
+            <div id="final-score"></div>
+            <button onclick="saveScore()">💾 שמור תוצאה</button>
+            <button onclick="resetGame()">🔄 משחק חדש</button>
+        </div>
+    </div>
+
+    <div class="admin-panel hidden" id="admin-panel">
+        <h2>ניהול שאלות 🔧</h2>
+        <div id="questions-container"></div>
+        <button onclick="addNewQuestion()" class="admin-button">➕ הוספת שאלה חדשה</button>
+        <div class="admin-actions">
+            <button onclick="saveQuestions()" class="admin-button save">💾 שמירת שינויים</button>
+            <button onclick="toggleAdminPanel()" class="admin-button">🎮 חזרה למשחק</button>
+        </div>
+    </div>
+
+    <div class="score-board">
+        <span>ניקוד:</span>
+        <span id="score">0</span>
+    </div>
+
+    <button class="admin-button hidden" id="admin-toggle-button" onclick="toggleAdminPanel()">🔧 ניהול</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
